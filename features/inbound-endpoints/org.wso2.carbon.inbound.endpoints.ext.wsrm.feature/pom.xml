@@ -71,7 +71,7 @@
                             </adviceFile>
                             <bundles>
                                 <bundleDef>org.wso2.carbon.mediation:org.wso2.carbon.inbound.endpoint.ext.wsrm</bundleDef>
-                                <bundleDef>org.wso2.orbit.org.apache.cxf:cxf-bundle</bundleDef>
+                                <!--<bundleDef>org.wso2.orbit.org.apache.cxf:cxf-bundle</bundleDef>-->
                                 <bundleDef>org.wso2.orbit.org.eclipse.jetty:jetty-bundle</bundleDef>
                             </bundles>
                         </configuration>

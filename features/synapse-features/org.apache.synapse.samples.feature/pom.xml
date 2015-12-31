@@ -67,7 +67,7 @@
                                 <bundleDef>org.apache.synapse:synapse-samples</bundleDef>
                             </bundles>
                             <importFeatures>
-                                <importFeatureDef>org.apache.synapse.wso2:${carbon.mediation.version}</importFeatureDef>
+                                <importFeatureDef>org.apache.synapse.wso2.mediation:${carbon.mediation.version}</importFeatureDef>
                             </importFeatures>
                         </configuration>
                     </execution>

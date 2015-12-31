@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- ~ Copyright (c) 2009-2011, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~ Copyright (c) WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
  ~ Licensed under the Apache License, Version 2.0 (the "License");
  ~ you may not use this file except in compliance with the License.
@@ -14,33 +14,38 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
 -->
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <parent>
+        <artifactId>inbound-endpoints-feature</artifactId>
         <groupId>org.wso2.carbon.mediation</groupId>
-        <artifactId>smooks-mediator-feature</artifactId>
-              <version>4.4.10</version>
+        <version>4.4.10</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <version>4.4.10</version>
-    <artifactId>org.wso2.carbon.mediator.smooks.server.feature</artifactId>
+    <artifactId>org.wso2.carbon.inbound.endpoints.ext.wsrm.feature</artifactId>
     <packaging>pom</packaging>
-    <name>WSO2 Carbon - Smooks Mediator Feature</name>
+    <name>WSO2 Carbon - CXF WS Reliable Messaging Feature</name>
     <url>http://wso2.org</url>
-    <description>This feature contains the Smooks Mediator</description>
+    <description>This feature contains the bundles required for CXF WS based Reliable Messaging functionality</description>
 
     <dependencies>
-	<dependency>
-	    <groupId>org.wso2.carbon.mediation</groupId>
-	    <artifactId>org.wso2.carbon.mediator.smooks</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>org.milyn.wso2</groupId>
-	    <artifactId>smooks</artifactId>
-	</dependency>
+        <dependency>
+            <groupId>org.wso2.carbon.mediation</groupId>
+            <artifactId>org.wso2.carbon.inbound.endpoint.ext.wsrm</artifactId>
+            <version>4.4.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.orbit.org.apache.cxf</groupId>
+            <artifactId>cxf-bundle</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.orbit.org.eclipse.jetty</groupId>
+            <artifactId>jetty-bundle</artifactId>
+        </dependency>
     </dependencies>
+
 
     <build>
         <plugins>
@@ -56,27 +61,23 @@
                             <goal>p2-feature-gen</goal>
                         </goals>
                         <configuration>
-                            <id>org.wso2.carbon.mediator.smooks.server</id>
-                            <propertiesFile>../../../etc/feature.properties</propertiesFile>
+                            <id>org.wso2.carbon.inbound.endpoints.ext.wsrm</id>
+                            <propertiesFile>../../etc/feature.properties</propertiesFile>
                             <adviceFile>
                                 <properties>
                                     <propertyDef>org.wso2.carbon.p2.category.type:server</propertyDef>
-                                    <propertyDef>org.eclipse.equinox.p2.type.group:false</propertyDef>
+                                    <!--<propertyDef>org.eclipse.equinox.p2.type.group:false</propertyDef>-->
                                 </properties>
                             </adviceFile>
                             <bundles>
-                                <bundleDef>org.wso2.carbon.mediation:org.wso2.carbon.mediator.smooks</bundleDef>
-                                <bundleDef>org.milyn.wso2:smooks</bundleDef>
+                                <bundleDef>org.wso2.carbon.mediation:org.wso2.carbon.inbound.endpoint.ext.wsrm</bundleDef>
+                                <bundleDef>org.wso2.orbit.org.apache.cxf:cxf-bundle</bundleDef>
+                                <bundleDef>org.wso2.orbit.org.eclipse.jetty:jetty-bundle</bundleDef>
                             </bundles>
-                            <importFeatures>
-                                <importFeatureDef>org.apache.synapse.wso2.mediation:${carbon.mediation.version}</importFeatureDef>
-                                <importFeatureDef>org.wso2.carbon.mediation.initializer.server</importFeatureDef>
-                            </importFeatures>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
-
 </project>

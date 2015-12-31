@@ -85,7 +85,7 @@
                                 <bundleDef>org.wso2.carbon:org.wso2.carbon.startup</bundleDef>
                             </bundles>
                             <importFeatures>
-                                <importFeatureDef>org.apache.synapse.wso2:${carbon.mediation.version}</importFeatureDef>
+                                <importFeatureDef>org.apache.synapse.wso2.mediation:${carbon.mediation.version}</importFeatureDef>
                                 <!--TODO use ndatasource-->
                                 <!--<importFeatureDef>org.wso2.carbon.datasource.server:${carbon.datastore.version}</importFeatureDef>-->
                                 <importFeatureDef>org.wso2.carbon.task.server</importFeatureDef>

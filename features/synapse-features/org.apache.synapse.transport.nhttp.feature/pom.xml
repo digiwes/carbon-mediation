@@ -25,7 +25,7 @@
 
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>org.apache.synapse.transport.nhttp.feature</artifactId>
+    <artifactId>org.apache.synapse.transport.nhttp.mediation.feature</artifactId>
     <packaging>pom</packaging>
     <name>WSO2 Carbon - Synapse Nhttp Transport Feature</name>
     <url>http://wso2.org</url>
@@ -68,7 +68,7 @@
                             <goal>p2-feature-gen</goal>
                         </goals>
                         <configuration>
-                            <id>org.apache.synapse.transport.nhttp</id>
+                            <id>org.apache.synapse.transport.nhttp.mediation</id>
                             <propertiesFile>../../etc/feature.properties</propertiesFile>
                             <adviceFile>
                                 <properties>

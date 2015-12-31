@@ -66,7 +66,7 @@
                                 <bundleDef>org.wso2.carbon.mediation:org.wso2.carbon.mediation.tracer</bundleDef>
                             </bundles>
                             <importFeatures>
-                                <importFeatureDef>org.apache.synapse.wso2:${carbon.mediation.version}</importFeatureDef>
+                                <importFeatureDef>org.apache.synapse.wso2.mediation:${carbon.mediation.version}</importFeatureDef>
                                 <importFeatureDef>org.wso2.carbon.mediation.initializer.server</importFeatureDef>
                             </importFeatures>
                         </configuration>
